@@ -1,8 +1,10 @@
-package com.erots.marketbelbeis;
+package com.erots.marketbelbeis.ui.main;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import com.erots.marketbelbeis.R;
 
 public class MainActivity extends AppCompatActivity {
 
