@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/nav_registration">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_registration"
+    app:startDestination="@id/login">
 
 
+    <fragment
+        android:id="@+id/login"
+        android:name="com.erots.marketbelbeis.ui.auth.login.Login"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/action_login_to_signUp"
+            app:destination="@id/signUp" />
+        <action
+            android:id="@+id/action_login_to_restPassword"
+            app:destination="@id/restPassword" />
+    </fragment>
+    <fragment
+        android:id="@+id/restPassword"
+        android:name="com.erots.marketbelbeis.ui.auth.restpass.RestPassword"
+        android:label="rest_password_fragment"
+        tools:layout="@layout/rest_password_fragment">
+        <action
+            android:id="@+id/action_restPassword_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUp"
+        android:name="com.erots.marketbelbeis.ui.auth.signup.SignUp"
+        android:label="sign_up_fragment"
+        tools:layout="@layout/sign_up_fragment">
+        <action
+            android:id="@+id/action_signUp_to_login"
+            app:destination="@id/login" />
+    </fragment>
 </navigation>

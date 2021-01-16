@@ -11,13 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/Theme.MarketBelbeis">
-        <activity android:name=".ui.auth.Registration"></activity>
-        <activity android:name=".ui.main.MainActivity">
+        <activity android:name=".ui.auth.Registration">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".ui.main.MainActivity">
+
         </activity>
     </application>
 
