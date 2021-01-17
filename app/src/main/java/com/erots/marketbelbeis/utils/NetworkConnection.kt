@@ -1,4 +1,4 @@
-package com.erots.marketbelbeis.ui.main
+package com.erots.marketbelbeis.utils
 
 import android.annotation.TargetApi
 import android.content.BroadcastReceiver
@@ -9,6 +9,7 @@ import android.net.*
 import android.os.Build
 import androidx.lifecycle.LiveData
 
+@Suppress("DEPRECATION")
 class NetworkConnection(private val context: Context) : LiveData<Boolean>() {
 
     private var connectivityManager: ConnectivityManager =

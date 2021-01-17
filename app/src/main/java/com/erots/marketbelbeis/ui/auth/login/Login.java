@@ -15,12 +15,14 @@ import androidx.navigation.Navigation;
 
 import com.erots.marketbelbeis.R;
 import com.erots.marketbelbeis.databinding.LoginFragmentBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends Fragment {
 
     private LoginViewModel mViewModel;
     private LoginFragmentBinding binding;
     private NavController controller;
+    private FirebaseAuth auth;
 
     public static Login newInstance() {
         return new Login();
@@ -39,6 +41,7 @@ public class Login extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
         binding.setLifecycleOwner(this);
+        auth = FirebaseAuth.getInstance();
         // TODO: Use the ViewModel
     }
 

@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Market Belbeis</string>
+    <string name="internetConnection">Check Your Network Connection…</string>
+    <string name="first_name">First Name</string>
+    <string name="second_name">Second Name</string>
+    <string name="e_mail">E-Mail</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="re_password">Re-Password</string>
+    <string name="send">Send</string>
 </resources>

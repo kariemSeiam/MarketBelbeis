@@ -49,11 +49,9 @@ public class SignUp extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         controller = Navigation.findNavController(view);
         options = new NavOptions.Builder().setPopUpTo(R.id.login, true).build();
-        binding.textSignUpTest.setOnClickListener(v -> {
-            controller.navigate(R.id.action_signUp_to_login, null, options);
-        });
 
 
     }
+
 
 }

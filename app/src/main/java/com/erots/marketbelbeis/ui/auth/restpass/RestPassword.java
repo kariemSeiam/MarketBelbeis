@@ -50,9 +50,6 @@ public class RestPassword extends Fragment {
         controller = Navigation.findNavController(view);
         options = new NavOptions.Builder().setPopUpTo(R.id.login, true).build();
 
-        binding.textRestTest.setOnClickListener(v -> {
-            controller.navigate(R.id.action_restPassword_to_login, null, options);
 
-        });
     }
 }
