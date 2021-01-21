@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group
 
-        android:menuCategory="secondary">
         <item
             android:id="@+id/item_acc"
             android:icon="@drawable/ic_robabikia"
-            android:title="Robabikia"
+            android:title="@string/marketplace"
 
             />
         <item
@@ -17,10 +15,10 @@
 
             />
 
-        <item
-            android:id="@+id/item_home"
-            android:icon="@drawable/ic_homepage"
-            android:title="Home" />
+    <item
+        android:id="@+id/item_home"
+        android:icon="@drawable/ic_homepage"
+        android:title="@string/home" />
 
 
         <item
@@ -33,11 +31,10 @@
         <item
             android:id="@+id/item_cart"
             android:icon="@drawable/ic_cart"
-            android:title="Cart"
+            android:title="@string/cart"
 
             />
 
 
-    </group>
 
 </menu>

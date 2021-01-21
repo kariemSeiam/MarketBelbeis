@@ -15,4 +15,9 @@
     <string name="sign_up_with_facebook">Sign Up With Facebook</string>
     <string name="favorite">Favorite</string>
     <string name="categories">Categories</string>
+    <string name="marketplace">Marketplace</string>
+    <string name="home">Home</string>
+    <string name="what_are_you_looking_for">What are you looking for…</string>
+    <string name="cart">Cart</string>
+    <string name="show_all"><![CDATA[show all >>]]></string>
 </resources>

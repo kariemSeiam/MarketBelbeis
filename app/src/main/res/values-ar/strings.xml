@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Market Belbeis</string>
+    <string name="internetConnection">Check Your Network Connection…</string>
+    <string name="first_name">الأسم الأول</string>
+    <string name="second_name">الأسم الأخير</string>
+    <string name="e_mail">البريد الالكترونى</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="password">الرقم السرى</string>
+    <string name="re_password">أعد كتابة الرقم السرى</string>
+    <string name="send">ارسال</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="continue_with_facebook">Continue With Facebook</string>
+    <string name="sign_up">إنشاء حساب جديد</string>
+    <string name="sign_up_with_facebook">Sign Up With Facebook</string>
+    <string name="favorite">Favorite</string>
+    <string name="categories">الأقسام</string>
+    <string name="marketplace">Marketplace</string>
+    <string name="home">Home</string>
+    <string name="what_are_you_looking_for">تبحث عن ماذا !</string>
+    <string name="cart">عربه التسوق</string>
+    <string name="show_all"><![CDATA[<< أظهار الكل ]]></string>
+
+
+</resources>

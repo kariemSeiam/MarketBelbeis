@@ -2,11 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/test">
+    app:startDestination="@id/home">
 
     <fragment
-        android:id="@+id/test"
-        android:name="com.erots.marketbelbeis.ui.main.test"
+        android:id="@+id/home"
+        android:name="com.erots.marketbelbeis.ui.main.home.Home"
         android:label="Test" />
 
 </navigation>
