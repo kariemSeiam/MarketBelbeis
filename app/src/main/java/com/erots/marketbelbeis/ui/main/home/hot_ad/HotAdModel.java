@@ -3,17 +3,27 @@ package com.erots.marketbelbeis.ui.main.home.hot_ad;
 public class HotAdModel {
     String hot_ad_price, hot_ad_title, hot_ad_image_uri, hot_ad_market_name;
     int hot_ad_id;
+    int test_image;
 
     public HotAdModel() {
 
     }
 
-    public HotAdModel(String hot_ad_price, String hot_ad_title, String hot_ad_image_uri, String hot_ad_market_name, int hot_ad_id) {
+    public HotAdModel(String hot_ad_price, String hot_ad_title, String hot_ad_image_uri, String hot_ad_market_name, int hot_ad_id, int test_image) {
         this.hot_ad_price = hot_ad_price;
         this.hot_ad_title = hot_ad_title;
         this.hot_ad_image_uri = hot_ad_image_uri;
         this.hot_ad_market_name = hot_ad_market_name;
         this.hot_ad_id = hot_ad_id;
+        this.test_image = test_image;
+    }
+
+    public int getTest_image() {
+        return test_image;
+    }
+
+    public void setTest_image(int test_image) {
+        this.test_image = test_image;
     }
 
     public String getHot_ad_market_name() {

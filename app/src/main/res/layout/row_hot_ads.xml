@@ -8,7 +8,7 @@
     app:cardCornerRadius="@dimen/_20sdp"
     app:cardElevation="2dp">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -18,16 +18,17 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_80sdp"
             android:background="@drawable/rounded_hot_ad_item"
-            android:backgroundTint="#E0F2F1"
-            android:src="@drawable/ad_item" />
+            android:backgroundTint="@color/colorD3"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ad_item"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvHotAdIteName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_5sdp"
-            android:layout_marginTop="@dimen/_3sdp"
-            android:layout_marginEnd="@dimen/_5sdp"
             android:ellipsize="end"
             android:fontFamily="@font/cairo"
             android:gravity="center"
@@ -35,66 +36,83 @@
             android:maxLines="1"
             android:paddingStart="@dimen/_3sdp"
             android:textColor="@color/colorD4"
-            android:textSize="@dimen/_10sdp"
-            android:textStyle="bold" />
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageViewHotAdItemImage" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHotAdIteName"
+
+            >
 
             <TextView
                 android:id="@+id/tvHotAdItemPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginEnd="@dimen/_8sdp"
                 android:ellipsize="end"
                 android:fontFamily="@font/cairo"
                 android:gravity="center"
                 android:hint="Price"
                 android:maxLines="2"
-                android:padding="@dimen/_3sdp"
-                android:textColor="#00BCD4"
-                android:textSize="@dimen/_9sdp"
+                android:textColor="#66BB6A"
+                android:textSize="@dimen/_10sdp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHotAdItemMarketName"
                 tools:ignore="SmallSp"
 
                 />
 
             <TextView
                 android:id="@+id/tvHotAdItemMarketName"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentBottom="true"
                 android:layout_gravity="start"
-                android:layout_marginStart="@dimen/_8sdp"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:layout_toStartOf="@id/tvHotAdItemPrice"
                 android:ellipsize="end"
                 android:fontFamily="@font/cairo"
                 android:gravity="center"
                 android:hint="Market Name"
                 android:maxLines="2"
-                android:padding="@dimen/_3sdp"
-
-                android:textColor="#4CAF50"
-                android:textSize="@dimen/_7sdp"
+                android:padding="@dimen/_2ssp"
+                android:textColor="#26A69A"
+                android:textSize="@dimen/_8sdp"
                 android:textStyle="bold"
-                tools:ignore="SmallSp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SmallSp" />
 
-                />
-        </RelativeLayout>
+            <ImageView
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:background="@drawable/back_add_to_cart"
+                android:padding="@dimen/_8sdp"
+                android:src="@drawable/ic_add_to_cart"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:background="@drawable/back_fav"
+                android:padding="@dimen/_8sdp"
+                android:src="@drawable/ic_un_favorite"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </com.google.android.material.card.MaterialCardView>

@@ -40,7 +40,7 @@ public class HotAdAdapter extends RecyclerView.Adapter<HotAdAdapter.HotAdViewHol
         holder.tvPrice.setText(model.getHot_ad_price());
         holder.tvMarket.setText(model.getHot_ad_market_name());
         Glide.with(context)
-                .load(R.drawable.ad_item)
+                .load(model.getTest_image())
                 .into(holder.imageView);
     }
 

@@ -19,5 +19,5 @@
     <string name="home">Home</string>
     <string name="what_are_you_looking_for">What are you looking for…</string>
     <string name="cart">Cart</string>
-    <string name="show_all"><![CDATA[show all >>]]></string>
+    <string name="show_all"><![CDATA[View All >>]]></string>
 </resources>

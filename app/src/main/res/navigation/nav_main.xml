@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/home">
 
     <fragment
         android:id="@+id/home"
         android:name="com.erots.marketbelbeis.ui.main.home.Home"
-        android:label="Test" />
+        android:label="Test"
+        tools:layout="@layout/home_fragment">
+        <action
+            android:id="@+id/action_home_to_categories"
+            app:destination="@id/categories" />
+    </fragment>
+    <fragment
+        android:id="@+id/categories"
+        android:name="com.erots.marketbelbeis.ui.main.categories.Categories"
+        android:label="categories_fragment"
+        tools:layout="@layout/categories_fragment" />
 
 </navigation>
