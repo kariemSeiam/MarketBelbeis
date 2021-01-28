@@ -1,5 +1,6 @@
-package com.erots.marketbelbeis.ui.cart;
+package com.erots.marketbelbeis.ui.main.cart;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import androidx.navigation.Navigation;
 
 import com.erots.marketbelbeis.R;
 import com.erots.marketbelbeis.databinding.CartFragmentBinding;
+import com.erots.marketbelbeis.ui.main.ItemSelectedNavBottom;
 
 public class Cart extends Fragment {
 
@@ -23,6 +25,7 @@ public class Cart extends Fragment {
     private NavOptions options;
     private NavController controller;
     private CartFragmentBinding binding;
+    ItemSelectedNavBottom selectedNavBottom;
 
     public static Cart newInstance() {
         return new Cart();
@@ -53,5 +56,15 @@ public class Cart extends Fragment {
 
     }
 
+
+    @Override
+    public void onAttach(@NonNull Activity activity) {
+        super.onAttach(activity);
+        try {
+            selectedNavBottom = (ItemSelectedNavBottom) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement onSomeEventListener");
+        }
+    }
 
 }

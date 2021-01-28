@@ -47,6 +47,7 @@ public class Setting extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         controller = Navigation.findNavController(view);
 
-
     }
+
+
 }

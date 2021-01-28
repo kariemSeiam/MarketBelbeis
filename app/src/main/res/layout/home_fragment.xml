@@ -93,61 +93,18 @@
                 android:layout_height="match_parent"
                 android:paddingBottom="@dimen/_50sdp">
 
-                <LinearLayout
-                    android:id="@+id/layout_search"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_8sdp"
-                    android:layout_marginTop="@dimen/_3sdp"
-                    android:layout_marginEnd="@dimen/_8sdp"
-                    android:layout_marginBottom="@dimen/_5sdp"
-                    android:background="@drawable/background_search"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingStart="@dimen/_10sdp"
-                    android:paddingEnd="@dimen/_10sdp"
-                    app:layout_constraintBottom_toTopOf="@id/adPanel"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/app_name"
-                        android:src="@drawable/ic_baseline_search"
-
-                        />
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_38sdp"
-                        android:layout_marginStart="@dimen/_12sdp"
-                        android:background="@null"
-                        android:fontFamily="@font/cairo"
-                        android:hint="@string/what_are_you_looking_for"
-                        android:imeOptions="actionDone"
-                        android:importantForAutofill="no"
-                        android:includeFontPadding="false"
-                        android:inputType="text"
-                        android:maxLines="1"
-                        android:textSize="@dimen/_13sdp"
-
-                        />
-                </LinearLayout>
 
                 <ImageView
                     android:id="@+id/adPanel"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_100sdp"
-                    android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginBottom="@dimen/_5sdp"
                     android:background="#03BDDE"
                     android:src="@drawable/ad_banner"
                     app:layout_constraintBottom_toTopOf="@id/layout_MostPopular"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/layout_search"
+                    app:layout_constraintTop_toTopOf="parent"
 
                     />
 

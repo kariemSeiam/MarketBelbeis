@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.erots.marketbelbeis.R;
-import com.erots.marketbelbeis.ui.main.home.hot_ad.HotAdModel;
+import com.erots.marketbelbeis.ui.main.home.test_frag.HotAdModel;
 
 import java.util.ArrayList;
 import java.util.List;

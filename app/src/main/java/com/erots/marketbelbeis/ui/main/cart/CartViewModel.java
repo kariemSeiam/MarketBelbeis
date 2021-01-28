@@ -1,4 +1,4 @@
-package com.erots.marketbelbeis.ui.cart;
+package com.erots.marketbelbeis.ui.main.cart;
 
 import androidx.lifecycle.ViewModel;
 

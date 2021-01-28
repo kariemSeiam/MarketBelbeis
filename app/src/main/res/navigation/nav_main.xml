@@ -3,21 +3,80 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/home">
+    app:startDestination="@id/navHome">
 
     <fragment
-        android:id="@+id/home"
+        android:id="@+id/navHome"
         android:name="com.erots.marketbelbeis.ui.main.home.Home"
         android:label="Test"
-        tools:layout="@layout/home_fragment">
+        tools:layout="@layout/home_fragment"
+
+        >
         <action
-            android:id="@+id/action_home_to_categories"
-            app:destination="@id/categories" />
+            android:id="@+id/action_home_to_setting"
+            app:destination="@id/navSetting" />
+        <action
+            android:id="@+id/action_navHome_to_navCart"
+            app:destination="@id/navCart" />
+        <action
+            android:id="@+id/action_navHome_to_navCategories"
+            app:destination="@id/navCategories" />
+        <action
+            android:id="@+id/action_navHome_to_navFavorite"
+            app:destination="@id/navFavorite" />
+        <action
+            android:id="@+id/action_navHome_to_navMarketplace"
+            app:destination="@id/navMarketplace" />
+
     </fragment>
+
     <fragment
-        android:id="@+id/categories"
+        android:id="@+id/navCategories"
         android:name="com.erots.marketbelbeis.ui.main.categories.Categories"
         android:label="categories_fragment"
-        tools:layout="@layout/categories_fragment" />
+        tools:layout="@layout/categories_fragment">
+        <action
+            android:id="@+id/action_navCategories_to_navHome"
+            app:destination="@id/navHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/navFavorite"
+        android:name="com.erots.marketbelbeis.ui.main.favorite.Favorite"
+        android:label="favorite_fragment"
+        tools:layout="@layout/favorite_fragment">
+        <action
+            android:id="@+id/action_navFavorite_to_navHome"
+            app:destination="@id/navHome" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navMarketplace"
+        android:name="com.erots.marketbelbeis.ui.main.marketplace.Marketplace"
+        android:label="marketplace_fragment"
+        tools:layout="@layout/marketplace_fragment">
+        <action
+            android:id="@+id/action_navMarketplace_to_navHome"
+            app:destination="@id/navHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/navCart"
+        android:name="com.erots.marketbelbeis.ui.main.cart.Cart"
+        android:label="Cart"
+        tools:layout="@layout/cart_fragment">
+
+        <action
+            android:id="@+id/action_navCart_to_navHome"
+            app:destination="@id/navHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/navSetting"
+        android:name="com.erots.marketbelbeis.ui.main.setting.Setting"
+        android:label="Setting"
+        tools:layout="@layout/setting_fragment">
+        <action
+            android:id="@+id/action_navSetting_to_navHome"
+            app:destination="@id/navHome" />
+    </fragment>
+
 
 </navigation>

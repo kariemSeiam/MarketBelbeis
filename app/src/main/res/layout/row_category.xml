@@ -6,19 +6,18 @@
     android:layout_margin="@dimen/_10sdp"
     app:cardCornerRadius="@dimen/_20sdp">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutCat"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bac_cat_0"
-
-        >
+        android:layout_weight="1">
 
         <ImageView
             android:id="@+id/categoryImage"
-            android:layout_width="@dimen/_50sdp"
-            android:layout_height="@dimen/_50sdp"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_electronics"
             app:layout_constraintBottom_toTopOf="@id/categoryName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,12 +25,16 @@
 
         <TextView
             android:id="@+id/categoryName"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
             android:fontFamily="@font/cairo"
-            android:text="Electronics"
+            android:gravity="center"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
             android:textColor="@color/colorD4"
-            android:textSize="@dimen/_18sdp"
+            android:textSize="@dimen/_14sdp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

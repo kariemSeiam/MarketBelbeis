@@ -1,4 +1,4 @@
-package com.erots.marketbelbeis.ui.main.home.hot_ad;
+package com.erots.marketbelbeis.ui.main.home.test_frag;
 
 import android.content.Context;
 import android.view.LayoutInflater;

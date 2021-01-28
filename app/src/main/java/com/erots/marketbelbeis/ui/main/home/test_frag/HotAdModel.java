@@ -1,4 +1,4 @@
-package com.erots.marketbelbeis.ui.main.home.hot_ad;
+package com.erots.marketbelbeis.ui.main.home.test_frag;
 
 public class HotAdModel {
     String hot_ad_price, hot_ad_title, hot_ad_image_uri, hot_ad_market_name;

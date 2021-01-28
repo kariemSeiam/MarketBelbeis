@@ -23,19 +23,79 @@
             android:textColor="@color/colorLogo1Light"
             android:textSize="@dimen/_20sdp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/nested"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerCategories"
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_20sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txtMainTitleCategories"
-            tools:listitem="@layout/row_category" />
+            app:layout_constraintTop_toBottomOf="@id/txtMainTitleCategories">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/layout_search_cat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:background="@drawable/background_search"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    app:layout_constraintBottom_toTopOf="@id/recyclerCategories"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_baseline_search"
+
+                        />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_38sdp"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:background="@null"
+                        android:fontFamily="@font/cairo"
+                        android:hint="@string/what_are_you_looking_for"
+                        android:imeOptions="actionDone"
+                        android:includeFontPadding="false"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="@dimen/_13sdp"
+
+                        />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerCategories"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_search_cat"
+                    tools:listitem="@layout/row_category" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
