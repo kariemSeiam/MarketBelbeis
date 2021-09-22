@@ -22,17 +22,19 @@ import com.erots.marketbelbeis.R;
 import com.erots.marketbelbeis.databinding.HomeFragmentBinding;
 import com.erots.marketbelbeis.ui.auth.Registration;
 import com.erots.marketbelbeis.ui.main.ItemSelectedNavBottom;
+import com.erots.marketbelbeis.ui.main.home.home_cat_bar.HomeBarCatsAdapter;
 import com.erots.marketbelbeis.ui.main.home.test_frag.HotAdAdapter;
+import com.erots.marketbelbeis.viewmodels.HomeViewModel;
 
 public class Home extends Fragment {
 
     ItemSelectedNavBottom selectedNavBottom;
     private HomeViewModel mViewModel;
     private HomeFragmentBinding binding;
-    private NavController controller;
+     NavController controller;
     private HotAdAdapter adapter;
-    private NavOptions navOptions;
-
+     NavOptions navOptions;
+    private HomeBarCatsAdapter adapterHomeCats;
 
     public Home newInstance() {
         return new Home();
@@ -56,6 +58,7 @@ public class Home extends Fragment {
         // TODO: Use the ViewModel
     }
 
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -68,13 +71,22 @@ public class Home extends Fragment {
 
     }
 
+
     private void adapterRun(LifecycleOwner owner) {
 
         binding.recyclerMostPopular.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         binding.recyclerCloses.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         binding.recyclerAccessories.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        binding.adHomeCatsRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
 
         mViewModel.addItems();
+        mViewModel.addCatsItems();
+
+        mViewModel.modelLiveDataCats.observe(owner, homeBarCatsModels -> {
+            adapterHomeCats = new HomeBarCatsAdapter(homeBarCatsModels, getContext());
+            binding.adHomeCatsRecycler.setAdapter(adapterHomeCats);
+            adapterHomeCats.notifyDataSetChanged();
+        });
         mViewModel.modelLiveData.observe(owner, hotAdModels -> {
             adapter = new HotAdAdapter(hotAdModels, getContext());
             binding.recyclerAccessories.setAdapter(adapter);

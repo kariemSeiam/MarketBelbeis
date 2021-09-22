@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.erots.marketbelbeis.R;
 import com.erots.marketbelbeis.ui.main.ItemSelectedNavBottom;
+import com.erots.marketbelbeis.viewmodels.FavoriteViewModel;
 
 public class Favorite extends Fragment {
 

@@ -1,16 +1,343 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorMain"
-    tools:context=".ui.main.marketplace.Marketplace">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Market Place"
-        android:textSize="@dimen/_20sdp" />
+        android:background="@color/colorLayoutsBackgroundLight"
+        tools:context=".ui.main.marketplace.Marketplace"
 
-</FrameLayout>
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageViewMarketplaceBtnAcc"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:src="@drawable/ic_account"
+                app:layout_constraintBottom_toBottomOf="@id/layout_logo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/layout_logo"
+
+                app:tint="#26A69A" />
+
+
+            <LinearLayout
+                android:id="@+id/layout_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:orientation="horizontal"
+                android:padding="@dimen/_15sdp"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewMarketplaceBtnFilter"
+                app:layout_constraintStart_toEndOf="@id/imageViewMarketplaceBtnAcc"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/fjalla"
+                    android:text="Market"
+                    android:textColor="#26A69A"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/fjalla"
+                    android:text="place"
+                    android:textColor="@color/colorLogo2Light"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold"
+
+
+                    />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageViewMarketplaceBtnFilter"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_13sdp"
+                android:src="@drawable/messenger_bubble_large_blue"
+                app:layout_constraintBottom_toBottomOf="@id/layout_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/layout_logo"
+                app:tint="#26A69A" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_search_Marketplace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:background="@drawable/background_search"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            app:layout_constraintBottom_toTopOf="@id/adMarketplaceCatsRecycler"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mainLayout"
+
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_baseline_search"
+                app:tint="#26A69A" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_38sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:background="@null"
+                android:fontFamily="@font/cairo"
+                android:hint="@string/what_are_you_looking_for"
+                android:imeOptions="actionDone"
+                android:includeFontPadding="false"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textSize="@dimen/_13sdp"
+
+                />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/adMarketplaceCatsRecycler"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_84sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:paddingEnd="-20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_search_Marketplace"
+            tools:listitem="@layout/row_home_category" />
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adMarketplaceCatsRecycler">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_MostPopular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginEnd="-20dp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@drawable/background_bar_items"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RelativeLayout
+                        android:id="@+id/barMostPopular_Marketplace"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="-20dp"
+                        android:paddingEnd="@dimen/_35sdp"
+                        app:layout_constraintBottom_toTopOf="@id/recyclerViewMarketplaceItemRecycler"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:fontFamily="@font/cairo"
+                            android:paddingStart="@dimen/_20sdp"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_5sdp"
+                            android:text="@string/show_all"
+                            android:textColor="#26A69A"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold"
+
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentLeft="true"
+                            android:fontFamily="@font/cairo"
+                            android:paddingStart="@dimen/_15sdp"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_5sdp"
+                            android:text="|  Recent"
+                            android:textColor="#26A69A"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold"
+
+
+                            />
+
+
+                    </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewMarketplaceItemRecycler"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_155sdp"
+                        android:orientation="horizontal"
+                        android:paddingEnd="25dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/barMostPopular_Marketplace"
+                        tools:listitem="@layout/rowrow" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_MostPopular"
+
+                    >
+
+                    <EditText
+                        android:id="@+id/edtMarketplace_ItemName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:hint="item name"
+                        android:inputType="text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/edtMarketplace_ItemMarketName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:hint="item market name"
+                        android:inputType="text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/edtMarketplace_ItemName" />
+
+                    <EditText
+                        android:id="@+id/edtMarketplace_ItemPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:hint="item price"
+                        android:inputType="number"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/edtMarketplace_ItemMarketName"
+
+                        />
+
+                    <Button
+                        android:id="@+id/btnMarketplaceItemPhoto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:text="add item photo"
+                        app:layout_constraintEnd_toStartOf="@id/btnMarketplaceRefresh"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/edtMarketplace_ItemPrice"
+
+                        />
+
+                    <Button
+                        android:id="@+id/btnMarketplaceRefresh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:text="Refresh"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/btnMarketplaceItemPhoto"
+                        app:layout_constraintTop_toBottomOf="@id/edtMarketplace_ItemPrice"
+
+                        />
+
+                    <ImageView
+                        android:id="@+id/imageViewMarketplace_ItemPic"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_150sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_150sdp"
+                        android:src="@drawable/back_add_to_cart"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btnMarketplaceItemPhoto"
+
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:src="@drawable/ic_add_to_cart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

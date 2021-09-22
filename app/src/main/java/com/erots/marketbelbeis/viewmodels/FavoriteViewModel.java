@@ -1,4 +1,4 @@
-package com.erots.marketbelbeis.ui.main.favorite;
+package com.erots.marketbelbeis.viewmodels;
 
 import androidx.lifecycle.ViewModel;
 

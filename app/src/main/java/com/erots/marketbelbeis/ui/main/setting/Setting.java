@@ -14,12 +14,12 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.erots.marketbelbeis.R;
-import com.erots.marketbelbeis.databinding.SettingFragmentBindingImpl;
+import com.erots.marketbelbeis.databinding.SettingFragmentBinding;
 
 public class Setting extends Fragment {
 
     private SettingViewModel mViewModel;
-    private SettingFragmentBindingImpl binding;
+    private SettingFragmentBinding binding;
     private NavController controller;
 
     public static Setting newInstance() {

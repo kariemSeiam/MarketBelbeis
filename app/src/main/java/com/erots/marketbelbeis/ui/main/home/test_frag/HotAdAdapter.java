@@ -20,6 +20,7 @@ public class HotAdAdapter extends RecyclerView.Adapter<HotAdAdapter.HotAdViewHol
     Context context;
 
 
+
     public HotAdAdapter(List<HotAdModel> models, Context context) {
         this.models = models;
         this.context = context;

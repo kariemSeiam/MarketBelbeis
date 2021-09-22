@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements ItemSelectedNavBo
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setLifecycleOwner(this);
-        checkInternet();
+                checkInternet();
 //        controller = Navigation.findNavController(this, R.id.fragmentContainerViewMain);
         navOptions = new NavOptions.Builder().setPopUpTo(R.id.navHome, false).build();
 
@@ -81,8 +81,9 @@ public class MainActivity extends AppCompatActivity implements ItemSelectedNavBo
 
     @Override
     protected void onStart() {
-        fragmentTransaction();
         super.onStart();
+        fragmentTransaction();
+
     }
 
     private synchronized void fragmentTransaction() {

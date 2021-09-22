@@ -24,7 +24,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:navGraph="@navigation/nav_main" />
+            app:navGraph="@navigation/nav_main"
+            />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavViewHome"
@@ -37,8 +38,8 @@
             android:paddingStart="@dimen/_10sdp"
             android:paddingEnd="@dimen/_3sdp"
             android:paddingBottom="@dimen/_2sdp"
-            app:itemIconTint="#0067CD"
-            app:itemTextColor="#0067CD"
+            app:itemIconTint="#26A69A"
+            app:itemTextColor="#26A69A"
             app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
             app:menu="@menu/bottom_nav_items"
 

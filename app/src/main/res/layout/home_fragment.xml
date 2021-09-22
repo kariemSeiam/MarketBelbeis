@@ -46,7 +46,7 @@
                     android:layout_gravity="center_vertical"
                     android:fontFamily="@font/fjalla"
                     android:text="Market"
-                    android:textColor="#0288D1"
+                    android:textColor="#26A69A"
                     android:textSize="@dimen/_20sdp"
                     android:textStyle="bold" />
 
@@ -68,10 +68,11 @@
 
             <ImageView
                 android:id="@+id/imageViewHomeBtnFilter"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
                 android:layout_marginEnd="@dimen/_13sdp"
-                android:src="@drawable/ic_filter"
+                app:tint="#26A69A"
+                android:src="@drawable/messenger_bubble_large_blue"
                 app:layout_constraintBottom_toBottomOf="@id/layout_logo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/layout_logo" />
@@ -94,19 +95,86 @@
                 android:paddingBottom="@dimen/_50sdp">
 
 
-                <ImageView
-                    android:id="@+id/adPanel"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_100sdp"
-                    android:layout_marginBottom="@dimen/_5sdp"
-                    android:background="#03BDDE"
-                    android:src="@drawable/ad_banner"
-                    app:layout_constraintBottom_toTopOf="@id/layout_MostPopular"
+                <LinearLayout
+                    android:id="@+id/layout_search_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:background="@drawable/background_search"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    app:layout_constraintBottom_toTopOf="@id/adHomeCatsRecycler"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
 
-                    />
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_baseline_search"
+                        app:tint="#26A69A" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_38sdp"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:background="@null"
+                        android:fontFamily="@font/cairo"
+                        android:hint="@string/what_are_you_looking_for"
+                        android:imeOptions="actionDone"
+                        android:includeFontPadding="false"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="@dimen/_13sdp"
+
+                        />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/adHomeCatsRecycler"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_84sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    app:layout_constraintBottom_toTopOf="@id/adPanel"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_search_home"
+                    tools:listitem="@layout/row_home_category"
+                    >
+
+
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/adPanel"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_100sdp"
+                    app:layout_constraintBottom_toTopOf="@id/layout_MostPopular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/adHomeCatsRecycler"
+                    app:cardCornerRadius="@dimen/_20sdp"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_100sdp"
+                        android:background="#03BDDE"
+                        android:src="@drawable/ad_banner"
+                         />
+                </com.google.android.material.card.MaterialCardView>
+
+
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/layout_MostPopular"
@@ -147,7 +215,7 @@
                             android:paddingEnd="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_5sdp"
                             android:text="@string/show_all"
-                            android:textColor="#0288D1"
+                            android:textColor="#26A69A"
                             android:textSize="@dimen/_12sdp"
                             android:textStyle="bold"
 
@@ -165,7 +233,7 @@
                             android:paddingEnd="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_5sdp"
                             android:text="|  Most Popular"
-                            android:textColor="#0288D1"
+                            android:textColor="#26A69A"
                             android:textSize="@dimen/_12sdp"
                             android:textStyle="bold"
 
@@ -228,7 +296,7 @@
                             android:paddingEnd="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_5sdp"
                             android:text="@string/show_all"
-                            android:textColor="#0288D1"
+                            android:textColor="#26A69A"
                             android:textSize="@dimen/_12sdp"
                             android:textStyle="bold"
 
@@ -246,7 +314,7 @@
                             android:paddingEnd="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_5sdp"
                             android:text="|  Accessories"
-                            android:textColor="#0288D1"
+                            android:textColor="#26A69A"
                             android:textSize="@dimen/_12sdp"
                             android:textStyle="bold"
 
@@ -310,7 +378,7 @@
                             android:paddingEnd="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_5sdp"
                             android:text="@string/show_all"
-                            android:textColor="#0288D1"
+                            android:textColor="#26A69A"
                             android:textSize="@dimen/_12sdp"
                             android:textStyle="bold"
 
@@ -327,7 +395,7 @@
                             android:paddingEnd="@dimen/_10sdp"
                             android:paddingBottom="@dimen/_5sdp"
                             android:text="|  Closes"
-                            android:textColor="#0288D1"
+                            android:textColor="#26A69A"
                             android:textSize="@dimen/_12sdp"
                             android:textStyle="bold"
 

@@ -1,24 +1,37 @@
 package com.erots.marketbelbeis.ui.main.marketplace;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.erots.marketbelbeis.R;
+import com.erots.marketbelbeis.databinding.MarketplaceFragmentBinding;
 import com.erots.marketbelbeis.ui.main.ItemSelectedNavBottom;
+import com.erots.marketbelbeis.viewmodels.MarketplaceViewModel;
+
+import java.util.List;
+
+import io.reactivex.CompletableObserver;
+import io.reactivex.SingleObserver;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 public class Marketplace extends Fragment {
 
     ItemSelectedNavBottom selectedNavBottom;
+    MarketplaceFragmentBinding binding;
+    PostAdapter adapter;
     private MarketplaceViewModel mViewModel;
 
     public static Marketplace newInstance() {
@@ -29,34 +42,33 @@ public class Marketplace extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.marketplace_fragment, container, false);
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        Toast.makeText(getContext(), "onDetach", Toast.LENGTH_SHORT).show();
-
-    }
-
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        Toast.makeText(getContext(), "onAttach", Toast.LENGTH_SHORT).show();
-
+        binding = DataBindingUtil.inflate(
+                inflater, R.layout.marketplace_fragment, container, false);
+        return binding.getRoot();
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(MarketplaceViewModel.class);
-        // TODO: Use the ViewModel
+        binding.setLifecycleOwner(this);
+
+
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         selectedNavBottom.currentItemSelected(R.id.item_marketplace);
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+
     }
 
     @Override

@@ -17,13 +17,14 @@ import com.erots.marketbelbeis.databinding.CategoriesFragmentBinding;
 import com.erots.marketbelbeis.ui.main.ItemSelectedNavBottom;
 import com.erots.marketbelbeis.ui.main.categories.grid.AutoFitGLayout;
 import com.erots.marketbelbeis.ui.main.categories.grid.CatGridAdapter;
+import com.erots.marketbelbeis.viewmodels.CategoriesViewModel;
 
 public class Categories extends Fragment {
 
     ItemSelectedNavBottom selectedNavBottom;
     CategoriesFragmentBinding binding;
     CatGridAdapter adapter;
-    AutoFitGLayout layoutManager = new AutoFitGLayout(getContext(), 250);
+    AutoFitGLayout layoutManager = new AutoFitGLayout(getContext(), 500);
 
     public static Categories newInstance() {
         return new Categories();

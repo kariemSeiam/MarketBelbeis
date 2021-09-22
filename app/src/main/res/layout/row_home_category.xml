@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="@dimen/_12sdp"
+    android:layout_marginTop="@dimen/_12sdp"
+    android:layout_marginStart="@dimen/_8sdp"
+    android:layout_marginEnd="@dimen/_8sdp"
+    app:cardCornerRadius="@dimen/_15sdp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/_60sdp"
+        android:padding="@dimen/_5sdp"
+
+        android:layout_height="@dimen/_60sdp"
+        android:background="@drawable/background_bar_cat_items"
+        >
+        <ImageView
+            android:id="@+id/rowHomeCats_Image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_25sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            app:layout_constraintBottom_toTopOf="@id/rowHomeCats_Name"
+            />
+
+        <TextView
+            android:id="@+id/rowHomeCats_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rowHomeCats_Image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="@dimen/_8sdp"
+            android:fontFamily="@font/cairo"
+            android:gravity="center"
+            android:textColor="@color/colorD4"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

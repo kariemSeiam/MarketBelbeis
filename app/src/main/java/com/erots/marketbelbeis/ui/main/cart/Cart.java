@@ -17,15 +17,16 @@ import androidx.navigation.Navigation;
 
 import com.erots.marketbelbeis.R;
 import com.erots.marketbelbeis.databinding.CartFragmentBinding;
+import com.erots.marketbelbeis.ui.main.categories.CartViewModel;
 import com.erots.marketbelbeis.ui.main.ItemSelectedNavBottom;
 
 public class Cart extends Fragment {
 
+    ItemSelectedNavBottom selectedNavBottom;
     private CartViewModel mViewModel;
     private NavOptions options;
     private NavController controller;
     private CartFragmentBinding binding;
-    ItemSelectedNavBottom selectedNavBottom;
 
     public static Cart newInstance() {
         return new Cart();
